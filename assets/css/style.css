@@ -1,0 +1,23 @@
+
+#receive-result{
+	padding-top: 10px;
+}
+
+
+.line{
+	display: inline-block;
+	width: 24%;
+	border: 1px solid;
+	border-color: #CCCCCC;
+	padding:2px;
+}
+
+
+.line .beside_registers{
+	padding-right: 10px;
+}
+
+.head{
+	background-color: grey;
+	color:white;
+}

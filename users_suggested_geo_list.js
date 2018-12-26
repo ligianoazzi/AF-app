@@ -39,8 +39,8 @@ $.ajax({
 
                     var friends_of_this_person = "";
 
-                	// rodando todos os resultados para uma linha .. isto pode ser pesado .. se eu tenho 10 pessoas, roda 10x aqui
-                    // lazy load seria bom aqui
+                	// runing all results for a line .. this can be time consumuing .. if have 10 person, loop 10 times here
+                        // lazy would be good here
     				$.each(all_results, function (key, value) {
     					
     					var cada = value.friends.split(',');
@@ -52,7 +52,7 @@ $.ajax({
 	    					value_2 = value_2.replace(']', "");
 	    					value_2 = value_2.replace('[', ""); 
 
-                            // NAO COMPARAR ... ORDENAR
+                            // DO NOT COMPARE ... order by
                                     var dados_acumula_2;
                                    $.ajax({
                                         url : "http://localhost:9000/vendor/google_maps/get_distance.php?origins="+value.city+"&destinations="+registro.city,
@@ -93,17 +93,18 @@ $.ajax({
 
 
 
-                            // PEGAR A DISTANCIA ENTRE A CIDADE DA PESSOA DO LOOP E A DISTANCIA ENTRE ESTA CIDADE E A CIDADE DA PESSOA DO LOOP 2
-                            // ADICIONAR NUM ARRAY NOME, CIDADE, DISTANCIA
-                            // DEPOIS ORDENAR POR DISTANCIA e sugerir alguma quantidade 
+                             // GET THE DISTANCE BETWEEN THE CITY OF THE PERSON OF THE LOOP AND THE DISTANCE BETWEEN THIS CITY AND THE CITY OF THE PERSON OF THE LOOP 2
+                             // ADD NUM ARRAY NAME, CITY, DISTANCE
+                             // AFTER ORDER BY DISTANCE and suggest some quantity
 
 
 
-    					}); // each cada
+    					});
 
     				}); // each all results
-                	
-                    // preciso percorrer todos os friends e comparar com o id do all_results
+       
+			     // needs to run all friends and to compare with id off all_results
+			     
     				return ""+friends_of_this_person+"";
 
 
